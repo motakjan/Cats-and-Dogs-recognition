@@ -13,13 +13,10 @@ def prepare(filepath):
 
 def predictData():
     for img in os.listdir(IMAGEDIR):
-        prediction = model.predict([prepare(str(img))]) # always predict a list
-        print("Prediction")
-        print(CATEGORIES[int(prediction[0][0])])
-        print("Reality")
-        print(img)
+        prediction = model.predict([prepare(os.path.join(IMAGEDIR,img))]) # always predict a list
+        print("Prediction: " + CATEGORIES[int(prediction[0][0])] + " " + "Reality: " + str(img))
      
-model = tf.keras.models.load_model("64x3-CNN.model")
+model = tf.keras.models.load_model("64x3-CNN-new.model")
 
 predictData()
 

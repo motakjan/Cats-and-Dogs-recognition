@@ -44,6 +44,6 @@ for dense_layer in dense_layers:
 
             model.compile(loss="binary_crossentropy", optimizer="adam",metrics=['accuracy'])
 
-            model.fit(X, y, batch_size=32,epochs=13, validation_split=0.20, callbacks=[tensorboard])
+            model.fit(X, y, batch_size=32,epochs=11, validation_split=0.10, callbacks=[tensorboard])
 
-model.save('64x3-CNN.model')
+model.save('64x3-CNN-new.model')
