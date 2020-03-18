@@ -18,7 +18,7 @@ def create_training_data():
         for img in os.listdir(path):
             try:
                 img_array = cv2.imread(os.path.join(path,img), cv2.IMREAD_GRAYSCALE) # transfer img to array
-                new_array = cv2.resize(img_array,(IMG_SIZE,IMG_SIZE)) # resizes pictures for the same height and width
+                new_array = cv2.resize(img_array,(IMG_SIZE,IMG_SIZE)) # resizes pictures for the same height and width¨
                 training_data.append([new_array, class_num])
             except Exception as e:
                 pass
